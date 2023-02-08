@@ -7,7 +7,7 @@ import { MovieService } from './movie.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'movie-list';
+  name = 'S00225953';
 
   movies: any[] = [];
 
