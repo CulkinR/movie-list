@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MovieService } from './movie.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'movie-list';
+
+  movies: any[] = [];
+
+  constructor(private movieService: MovieService) {}
+
+  ngOnInit() {
+    this.movies = this.movieService.getMovies();
+    console.log(this.movies);
+  }
+  
 }
