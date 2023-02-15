@@ -304,18 +304,8 @@
 
 <!-- Toolbar -->
 <div>
-  <h1>Movie Favourites</h1>
-  <ul>
-    <li *ngFor="let movie of movies"> {{movie.title}} ({{movie.year}}) - Directed by {{movie.director}} </li>
-  </ul>
-  <h2>By: {{name}}</h2>
+  <h1>Movies</h1>
+  <app-add-movie></app-add-movie>
+  <app-list-movies></app-list-movies>
 </div>
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 

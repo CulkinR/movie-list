@@ -17,4 +17,14 @@ export class MovieService {
   getMovies() {
     return this.movieList;
   }
+
+  getRandomId(): number {
+    let id = 0;
+    id = Math.floor(Math.random() * 14);
+    return id
+  }
+
+  addMovie(title: string, director: string, year: string) {
+    this.movieList.push({id: this.getRandomId(), title: title, year: year, director: director});
+  }
 }
