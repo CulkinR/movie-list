@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MovieService } from './movie.service';
+import { Movie } from './movie.model';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +7,9 @@ import { MovieService } from './movie.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
+  public mySelectedMovie: Movie;
+
+  setSelectedMovie(movie: Movie) {
+    this.mySelectedMovie = movie;
+  }
 }

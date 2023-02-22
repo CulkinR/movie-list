@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MovieService } from '../movie.service';
+import { Movie } from '../movie.model';
 
 @Component({
   selector: 'app-list-movies',
@@ -10,11 +11,30 @@ export class ListMoviesComponent implements OnInit {
   name = 'S00225953';
 
   movies: any[] = [];
+  private currentMovie: Movie;
 
-  constructor(private movieService: MovieService) {}
+  @Output() onSelectedMovie: EventEmitter<Movie>;
+
+  constructor(private movieService: MovieService) {
+    this.onSelectedMovie = new EventEmitter();
+  }
 
   ngOnInit() {
     this.movies = this.movieService.getMovies();
     console.log(this.movies);
+  }
+
+  selectMovie(myMovie: Movie): void {
+    console.log(myMovie);
+    this.currentMovie = myMovie;
+    this.onSelectedMovie.emit(myMovie);
+  }
+
+  isSelected(movie: Movie): boolean {
+    if (!movie || !this.currentMovie) {
+      return false;
+    } else {
+      return movie.title === this.currentMovie.title;
+    }
   }
 }
